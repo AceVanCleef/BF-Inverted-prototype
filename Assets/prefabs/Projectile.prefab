@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 212267388293983098}
   - component: {fileID: 58622229893309540}
   - component: {fileID: 114496907029542950}
+  - component: {fileID: 50562165737289514}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -42,6 +43,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &50562165737289514
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1311479053003764}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.5
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!58 &58622229893309540
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -68,7 +89,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: afc42ea63c1370f4ea2cb3fb13d41002, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 3
 --- !u!212 &212267388293983098
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -101,7 +122,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f45b811fc804b394d8dd82b141ca8ffc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6c05cf008828a154da2d3db9fd9ee0d8, type: 3}
   m_Color: {r: 0.29195502, g: 0.8090622, b: 0.88235295, a: 1}
   m_FlipX: 0
   m_FlipY: 0

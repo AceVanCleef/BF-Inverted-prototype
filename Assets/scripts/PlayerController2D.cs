@@ -43,7 +43,13 @@ public class PlayerController2D : MonoBehaviour {
         if (Input.GetButton("Fire1") && Time.time > newFire)
         {
             newFire = Time.time + fireRate;
-            Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
+            GameObject projectile = Instantiate(shot, shotSpawn.position, shotSpawn.rotation) as GameObject;
+
+            Vector2 direction = projectile.GetComponent<ProjectileMover2D>().getDirectionTowardsMousePos();
+            direction.Normalize();
+            projectile.GetComponent<ProjectileMover2D>().setDirection2D(direction);
+
+
 
             //when you want to get a reference to the shot object, see this:
             //https://docs.unity3d.com/ScriptReference/Input.GetButton.html
