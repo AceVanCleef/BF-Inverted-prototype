@@ -27,6 +27,7 @@ public class ProjectileMover2D : MonoBehaviour {
     private void faceSpriteTowardsMousePos()
     {
         transform.rotation = FacingDirection2D.FaceObject(getCurrentPos(), getMousePos(), FacingDirection2D.FacingDirection.RIGHT);
+        //fix: this aims towards wrong direction
     }
 
 
@@ -50,7 +51,8 @@ public class ProjectileMover2D : MonoBehaviour {
 
     private Vector2 getMousePos()
     {
-        return Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y));
+       // Camera.main.transform.position.x
+        return Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Camera.main.pixelHeight - Input.mousePosition.y));
     }
 
 }
