@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class ProjectileMover2D : MonoBehaviour {
 
     public float speed = 1.0f;
@@ -26,8 +27,7 @@ public class ProjectileMover2D : MonoBehaviour {
     /// <returns></returns>
     private void faceSpriteTowardsMousePos()
     {
-        transform.rotation = FacingDirection2D.FaceObject(getCurrentPos(), getMousePos(), FacingDirection2D.FacingDirection.RIGHT);
-        //fix: this aims towards wrong direction
+        transform.rotation = FacingDirection2D.FaceObject(getCurrentPos(), Positions2D_Lib.getMousePos(), FacingDirection2D.FacingDirection.RIGHT);
     }
 
 
@@ -41,7 +41,7 @@ public class ProjectileMover2D : MonoBehaviour {
 
     private Vector2 getDirectionTowardsMousePos()
     {
-        return getMousePos() - getCurrentPos();
+        return Positions2D_Lib.getMousePos() - getCurrentPos();
     }
 
     private Vector2 getCurrentPos()
@@ -49,10 +49,6 @@ public class ProjectileMover2D : MonoBehaviour {
         return new Vector2(transform.position.x, transform.position.y);
     }
 
-    private Vector2 getMousePos()
-    {
-       // Camera.main.transform.position.x
-        return Camera.main.ScreenToWorldPoint( Input.mousePosition );   //mousePosition = Vector.
-    }
+    
 
 }

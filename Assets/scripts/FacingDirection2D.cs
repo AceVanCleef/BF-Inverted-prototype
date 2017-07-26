@@ -32,4 +32,6 @@ public class FacingDirection2D : MonoBehaviour {
     }
 
     //source and usage: http://answers.unity3d.com/questions/654222/make-sprite-look-at-vector2-in-unity-2d-1.html
+
+   
 }

@@ -34,12 +34,23 @@ public class PlayerController2D : MonoBehaviour {
     public GameObject shot;
     //public GameObject shotSpawn;
     public Transform shotSpawn; //Unity automatically gets the Transform property of GameObject shotSpawn.
+    public Transform gun;
+
 
     public float fireRate; //= 0.5f;
     private float newFire = 0.0f;   //when the next shot can be fired (in seconds)
 
     void Update()
     {
+        //shotSpawn orientation:
+        gun.transform.rotation = FacingDirection2D.FaceObject(
+            Positions2D_Lib.getCurrentPosOf(shotSpawn), 
+            Positions2D_Lib.getMousePos(), 
+            FacingDirection2D.FacingDirection.RIGHT
+            );
+
+
+        //shooting:
         if (Input.GetButton("Fire1") && Time.time > newFire)
         {
             newFire = Time.time + fireRate;
