@@ -239,6 +239,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &1452113917 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 4712581248342836, guid: 0df8787c6918c5942a4aee2ff11585f4,
+    type: 2}
+  m_PrefabInternal: {fileID: 1860687768}
 --- !u!1001 &1860687768
 Prefab:
   m_ObjectHideFlags: 0
@@ -280,12 +285,22 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4712581248342836, guid: 0df8787c6918c5942a4aee2ff11585f4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4302787681433084, guid: 0df8787c6918c5942a4aee2ff11585f4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1626498570347504, guid: 0df8787c6918c5942a4aee2ff11585f4, type: 2}
+      propertyPath: m_Name
+      value: Projectile Spawn
+      objectReference: {fileID: 0}
+    - target: {fileID: 114128107562426786, guid: 0df8787c6918c5942a4aee2ff11585f4,
+        type: 2}
+      propertyPath: shotSpawn
+      value: 
+      objectReference: {fileID: 1452113917}
+    m_RemovedComponents:
+    - {fileID: 114372779281462630, guid: 0df8787c6918c5942a4aee2ff11585f4, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 0df8787c6918c5942a4aee2ff11585f4, type: 2}
   m_IsPrefabParent: 0

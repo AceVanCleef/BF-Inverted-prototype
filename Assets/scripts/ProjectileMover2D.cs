@@ -46,13 +46,13 @@ public class ProjectileMover2D : MonoBehaviour {
 
     private Vector2 getCurrentPos()
     {
-        return new Vector2(transform.position.x, transform.position.y + 1);
+        return new Vector2(transform.position.x, transform.position.y);
     }
 
     private Vector2 getMousePos()
     {
        // Camera.main.transform.position.x
-        return Camera.main.ScreenToWorldPoint(new Vector2(Input.mousePosition.x, Camera.main.pixelHeight - Input.mousePosition.y));
+        return Camera.main.ScreenToWorldPoint( Input.mousePosition );   //mousePosition = Vector.
     }
 
 }
