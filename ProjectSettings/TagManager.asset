@@ -9,6 +9,7 @@ TagManager:
   - EnemyProjectile
   - BioHazard
   - AtomicHazard
+  - Obstacle
   layers:
   - Default
   - TransparentFX
