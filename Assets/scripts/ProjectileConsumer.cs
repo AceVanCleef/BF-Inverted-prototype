@@ -8,7 +8,6 @@ public class ProjectileConsumer : MonoBehaviour {
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        print("ouch");
 
         if (tag.Equals("Player") && col.gameObject.tag == "Projectile")
         {

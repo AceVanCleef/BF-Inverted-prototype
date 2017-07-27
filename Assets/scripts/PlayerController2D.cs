@@ -17,6 +17,7 @@ public class PlayerController2D : MonoBehaviour {
     private string xAxis;
     private string yAxis;
     private string fire1;
+    private string fire2;
 
     void Start()
     {
@@ -25,12 +26,14 @@ public class PlayerController2D : MonoBehaviour {
             xAxis = "Horizontal";
             yAxis = "Vertical";
             fire1 = "Fire1";
+            fire2 = "Fire2";
         }
         else //Enemy
         {
             xAxis = "HorizontalOnController";
             yAxis = "VerticalOnController";
             fire1 = "Fire1OnController";
+            fire2 = "Fire2OnController";
         }
     }
 
@@ -58,22 +61,33 @@ public class PlayerController2D : MonoBehaviour {
             );
     }
 
-    /********************************* shooting a bolt *********************************/
+    /********************************* shooting projectiles, dropping hazards *********************************/
 
     public GameObject shot;
     //public GameObject shotSpawn;
     public Transform shotSpawn; //Unity automatically gets the Transform property of GameObject shotSpawn.
     public Transform gun;
 
-
-    public float fireRate; //= 0.5f;
+    public float fireRate = 0.25f;
     private float newFire = 0.0f;   //when the next shot can be fired (in seconds)
+
+
+    //deadly medipacks:
+    public GameObject hazard;
+    public float hazardDropRate = 4.0f;
+    private float newHazard = 0.0f;
+    /* the VFX on top of shotSpawn for "while holding" */
+    public SpriteRenderer hazardVFXWhileWalking;
+
+    //either you shoot or you hold and drop a hazard
+    private bool areHandsFull = false;
 
     void Update()
     {
         //shotSpawn orientation:
         
 
+        //gun rotation
         if (tag.Equals("Player"))
         {
             gun.transform.rotation = FacingDirection2D.FaceObject(
@@ -91,8 +105,8 @@ public class PlayerController2D : MonoBehaviour {
             );
         }
 
-            //shooting:
-            if (Input.GetButton(fire1) && Time.time > newFire)
+        //shooting:
+        if (Input.GetButton(fire1) && !areHandsFull && Time.time > newFire)
         {
             newFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
@@ -100,5 +114,40 @@ public class PlayerController2D : MonoBehaviour {
             //when you want to get a reference to the shot object, see this:
             //https://docs.unity3d.com/ScriptReference/Input.GetButton.html
         }
+
+        //hazards (deadly medipacks)
+        if (Input.GetButton(fire2))
+        {
+            if (areHandsFull && Time.time > newHazard)
+            {
+                dropHazard();
+                areHandsFull = false;
+            }
+            if (!areHandsFull && Time.time > newHazard)
+            {
+                newHazard = Time.time + hazardDropRate;
+                //make the hazard's sprite visible:
+                holdHazard();
+                areHandsFull = true;
+            }
+        }
+
+
+
+
+    }
+
+    private void holdHazard()
+    {
+        hazardVFXWhileWalking.enabled = true;
+        print(hazardVFXWhileWalking.enabled);
+    }
+
+    private void dropHazard()
+    {
+        //deactivate hazard box VFX
+        hazardVFXWhileWalking.enabled = false;
+        //and drop instance of it on game level
+        GameObject hazardInstance = Instantiate(hazard, shotSpawn.position, shotSpawn.rotation) as GameObject;
     }
 }

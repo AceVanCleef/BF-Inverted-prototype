@@ -35,7 +35,6 @@ public class FacingDirection2D : MonoBehaviour {
 
     public static Vector2 getControllerRightAxisVector()
     {
-        print(new Vector2(Input.GetAxis("RightStickXAxis"), Input.GetAxis("RightStickYAxis")));
         return new Vector2(Input.GetAxis("RightStickXAxis"), Input.GetAxis("RightStickYAxis"));
     }
    

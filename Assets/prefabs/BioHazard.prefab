@@ -21,9 +21,9 @@ GameObject:
   - component: {fileID: 4572204937055788}
   - component: {fileID: 70776439059083084}
   - component: {fileID: 50782919093501924}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BioHazard
-  m_TagString: Untagged
+  m_TagString: BioHazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -37,7 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4828757576600362}
   - component: {fileID: 212879407090215790}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HazardContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4680374757635258}
   - component: {fileID: 212384739566968174}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: BioHazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -169,7 +169,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: eeab96fa9b8e99b4ea6a591196f77d91, type: 3}
-  m_Color: {r: 0.97794116, g: 0.0647167, b: 0.0647167, a: 1}
+  m_Color: {r: 0.9632353, g: 0.347048, b: 0.347048, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

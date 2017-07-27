@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4061106531861898}
   - component: {fileID: 212795841462180038}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AtomicHazard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,9 +37,9 @@ GameObject:
   - component: {fileID: 4041421265183554}
   - component: {fileID: 50205920320843860}
   - component: {fileID: 70507741376297626}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: AtomicHazard
-  m_TagString: Untagged
+  m_TagString: AtomicHazard
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,7 +53,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4510481796435382}
   - component: {fileID: 212397708077763432}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: HazardContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -67,7 +67,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951050860823780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 3.1221347, y: -0.67638737, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4061106531861898}
