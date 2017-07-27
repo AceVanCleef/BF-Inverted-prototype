@@ -9,10 +9,28 @@ public class ProjectileMover2D : MonoBehaviour {
 
     void Start()
     {
-        shoot();
+        if (tag.Equals("Projectile"))   //not quite right
+        {
+           shootWithMouse();
+        }
+        else //EnemyProjectile
+        {
+            shootWithcontroller();
+        }
+
     }
 
-    private void shoot()
+    private void shootWithcontroller()
+    {
+        //sprite orientation
+        transform.rotation = FacingDirection2D.FaceObject(getCurrentPos(), FacingDirection2D.getControllerRightAxisVector(), FacingDirection2D.FacingDirection.RIGHT);
+        //shoot into direction of controller's right stick
+        Vector2 direction = FacingDirection2D.getControllerRightAxisVector();
+        direction.Normalize();
+        GetComponent<Rigidbody2D>().velocity = direction * speed;
+    }
+
+    private void shootWithMouse()
     {
         faceSpriteTowardsMousePos();
         shootTowardsMousePos();

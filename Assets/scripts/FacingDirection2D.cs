@@ -33,5 +33,10 @@ public class FacingDirection2D : MonoBehaviour {
 
     //source and usage: http://answers.unity3d.com/questions/654222/make-sprite-look-at-vector2-in-unity-2d-1.html
 
+    public static Vector2 getControllerRightAxisVector()
+    {
+        print(new Vector2(Input.GetAxis("RightStickXAxis"), Input.GetAxis("RightStickYAxis")));
+        return new Vector2(Input.GetAxis("RightStickXAxis"), Input.GetAxis("RightStickYAxis"));
+    }
    
 }
