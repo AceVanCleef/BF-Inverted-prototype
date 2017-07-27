@@ -81,14 +81,15 @@ public class PlayerController2D : MonoBehaviour {
     private float newHazard = 0.0f;
     /* the VFX on top of shotSpawn for "while holding" */
     public SpriteRenderer hazardVFXWhileWalking;
+    /* prevent instant drop of hazard crates */
+    public float hazardDropDelay = 0.2f;
+    private float newDrop = 0.0f;
 
     //either you shoot or you hold and drop a hazard
     private bool areHandsEmpty = true;
 
     void Update()
     {
-        //shotSpawn orientation:
-        
 
         //gun rotation
         if (tag.Equals("Player"))
@@ -121,18 +122,14 @@ public class PlayerController2D : MonoBehaviour {
         //pick up a hazards (deadly medipacks)
         if (Input.GetButton(fire2) && Time.time > newHazard && areHandsEmpty)
         {
- 
-                pickupHazard();
-                areHandsEmpty = false;
-
+            pickupHazard();
+            areHandsEmpty = false;                
         }
 
-        if (Input.GetButton(fire3) && Time.time > newHazard && !areHandsEmpty)
+        if (Input.GetButton(fire3) && Time.time > newDrop && !areHandsEmpty)
         {
-            
-                dropHazard();
-                areHandsEmpty = true;
-            
+            dropHazard();
+            areHandsEmpty = true;               
         }
 
 
@@ -145,6 +142,7 @@ public class PlayerController2D : MonoBehaviour {
     {
         //timing
         newHazard = Time.time + hazardDropRate;
+        newDrop = Time.time + hazardDropDelay;
 
         hazardVFXWhileWalking.enabled = true;
         print(hazardVFXWhileWalking.enabled);
