@@ -18,6 +18,7 @@ public class PlayerController2D : MonoBehaviour {
     private string yAxis;
     private string fire1;
     private string fire2;
+    private string fire3;
 
     void Start()
     {
@@ -27,6 +28,7 @@ public class PlayerController2D : MonoBehaviour {
             yAxis = "Vertical";
             fire1 = "Fire1";
             fire2 = "Fire2";
+            fire3 = "Fire3";
         }
         else //Enemy
         {
@@ -34,6 +36,7 @@ public class PlayerController2D : MonoBehaviour {
             yAxis = "VerticalOnController";
             fire1 = "Fire1OnController";
             fire2 = "Fire2OnController";
+            fire3 = "Fire3OnController";
         }
     }
 
@@ -80,7 +83,7 @@ public class PlayerController2D : MonoBehaviour {
     public SpriteRenderer hazardVFXWhileWalking;
 
     //either you shoot or you hold and drop a hazard
-    private bool areHandsFull = false;
+    private bool areHandsEmpty = true;
 
     void Update()
     {
@@ -106,7 +109,7 @@ public class PlayerController2D : MonoBehaviour {
         }
 
         //shooting:
-        if (Input.GetButton(fire1) && !areHandsFull && Time.time > newFire)
+        if (Input.GetButton(fire1) && areHandsEmpty && Time.time > newFire)
         {
             newFire = Time.time + fireRate;
             Instantiate(shot, shotSpawn.position, shotSpawn.rotation);
@@ -115,30 +118,34 @@ public class PlayerController2D : MonoBehaviour {
             //https://docs.unity3d.com/ScriptReference/Input.GetButton.html
         }
 
-        //hazards (deadly medipacks)
-        if (Input.GetButton(fire2))
+        //pick up a hazards (deadly medipacks)
+        if (Input.GetButton(fire2) && Time.time > newHazard && areHandsEmpty)
         {
-            if (areHandsFull && Time.time > newHazard)
-            {
-                dropHazard();
-                areHandsFull = false;
-            }
-            if (!areHandsFull && Time.time > newHazard)
-            {
-                newHazard = Time.time + hazardDropRate;
-                //make the hazard's sprite visible:
-                holdHazard();
-                areHandsFull = true;
-            }
+ 
+                pickupHazard();
+                areHandsEmpty = false;
+
         }
+
+        if (Input.GetButton(fire3) && Time.time > newHazard && !areHandsEmpty)
+        {
+            
+                dropHazard();
+                areHandsEmpty = true;
+            
+        }
+
 
 
 
 
     }
 
-    private void holdHazard()
+    private void pickupHazard()
     {
+        //timing
+        newHazard = Time.time + hazardDropRate;
+
         hazardVFXWhileWalking.enabled = true;
         print(hazardVFXWhileWalking.enabled);
     }
