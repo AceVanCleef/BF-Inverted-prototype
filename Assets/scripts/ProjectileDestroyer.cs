@@ -8,15 +8,19 @@ public class ProjectileDestroyer : MonoBehaviour {
     {
         ProjectileBounceTracker bounceTracker = col.gameObject.GetComponent<ProjectileBounceTracker>();
 
-        if (tag.Equals("Obstacle") && (col.gameObject.tag == "Projectile" || col.gameObject.tag == "EnemyProjectile"))
+        if(col.gameObject.tag == "Projectile" || col.gameObject.tag == "EnemyProjectile")
         {
-            bounceTracker.incrementCurrentBounceCount();
-        }
+            if (tag.Equals("Obstacle"))
+            {
+                bounceTracker.incrementCurrentBounceCount();
+            }
 
-        if (bounceTracker.getCurrentBounceCount() >= bounceTracker.getMaxBounceCount() )
-        {
-            Destroy(col.gameObject);
+            if (bounceTracker.getCurrentBounceCount() >= bounceTracker.getMaxBounceCount())
+            {
+                Destroy(col.gameObject);
+            }
         }
+        
 
     }
 }
