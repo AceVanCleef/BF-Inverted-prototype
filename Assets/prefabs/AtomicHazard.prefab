@@ -86,8 +86,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4874125567648304}
   - component: {fileID: 50967156047950702}
-  - component: {fileID: 70652257731611528}
   - component: {fileID: 114700564661624000}
+  - component: {fileID: 58249248436539198}
   m_Layer: 12
   m_Name: AtomicHazardDamageCircle
   m_TagString: AtomicHazardDamageCircle
@@ -102,7 +102,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1951050860823780}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 2.8818698, y: -0.7778056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4061106531861898}
@@ -204,6 +204,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!58 &58249248436539198
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1992697016320942}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.3
 --- !u!70 &70507741376297626
 CapsuleCollider2D:
   m_ObjectHideFlags: 1
@@ -218,21 +233,6 @@ CapsuleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.45, y: 0.45}
-  m_Direction: 0
---- !u!70 &70652257731611528
-CapsuleCollider2D:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1992697016320942}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
   m_Direction: 0
 --- !u!114 &114291362610892006
 MonoBehaviour:

@@ -69,9 +69,9 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4186485250558186}
-  - component: {fileID: 70029047814271380}
   - component: {fileID: 50920156222968412}
   - component: {fileID: 114267804122857060}
+  - component: {fileID: 58142019462535384}
   m_Layer: 12
   m_Name: BioHazardDamageCircle
   m_TagString: BioHazardDamageCircle
@@ -129,7 +129,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1756075877467396}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 1.964458, y: -1.735105, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4680374757635258}
@@ -204,8 +204,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!70 &70029047814271380
-CapsuleCollider2D:
+--- !u!58 &58142019462535384
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -216,9 +216,9 @@ CapsuleCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 1, y: 1}
-  m_Direction: 0
+  m_Offset: {x: -0.5983162, y: 0}
+  serializedVersion: 2
+  m_Radius: 2.2
 --- !u!70 &70776439059083084
 CapsuleCollider2D:
   m_ObjectHideFlags: 1

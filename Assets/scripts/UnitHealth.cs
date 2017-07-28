@@ -27,6 +27,8 @@ public class UnitHealth : MonoBehaviour {
 
     public void sufferDamage(int amount)
     {
+        print("damage: " + amount);
+
         if (!isDead && currentHealth - amount >= 0)
         {
             currentHealth += amount;

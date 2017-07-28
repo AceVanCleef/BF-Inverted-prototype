@@ -12,15 +12,19 @@ public class HazardPulsar : MonoBehaviour {
 
     private bool pulseActive;
 
+
 	// Update is called once per frame
 	void Update () {
-		if (Time.time > newPulse)
+        CircleCollider2D collider = GetComponent<CircleCollider2D>();
+
+        if (Time.time > newPulse)
         {
             pulseActive = true;
         }
 
         if (pulseActive)
         {
+            collider.enabled = true;
             if (currentRatius < maxRadius)
             {
                 //increase radius
@@ -35,6 +39,9 @@ public class HazardPulsar : MonoBehaviour {
                 transform.localScale = new Vector3(0.1f, 0.1f);
                 newPulse = Time.time + pulseRate;   //new pulse
             }
+        }
+        else
+        {// collider.enabled = false; 
         }
 
         
