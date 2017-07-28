@@ -65,4 +65,10 @@ public class UnitHealth : MonoBehaviour {
     {
         return isDead;
     }
+
+    public void resetHealth()
+    {
+        isDead = false;
+        regainHealth(maxHealth);
+    }
 }
