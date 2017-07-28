@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 4041421265183554}
   - component: {fileID: 50205920320843860}
   - component: {fileID: 70507741376297626}
+  - component: {fileID: 114291362610892006}
   m_Layer: 12
   m_Name: AtomicHazard
   m_TagString: AtomicHazard
@@ -233,6 +234,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 1}
   m_Direction: 0
+--- !u!114 &114291362610892006
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1951050860823780}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6d38017ea10f9a4e8f5eaf2d540f367, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifeSpan: 16
 --- !u!114 &114700564661624000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,9 +258,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pulseRate: 1
-  newPulse: 0
   maxRadius: 0.5
-  currentRatius: 0
 --- !u!212 &212397708077763432
 SpriteRenderer:
   m_ObjectHideFlags: 1
