@@ -16,7 +16,7 @@ public class HazardPulsar : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         CircleCollider2D collider = GetComponent<CircleCollider2D>();
-
+        
         if (Time.time > newPulse)
         {
             pulseActive = true;

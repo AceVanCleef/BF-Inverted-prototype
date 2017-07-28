@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 50942650910155108}
   - component: {fileID: 58626820434506772}
   - component: {fileID: 114756591030441738}
+  - component: {fileID: 114730677416123702}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -193,6 +194,19 @@ MonoBehaviour:
   hazard: {fileID: 1756075877467396, guid: 8d9c1296d296e584ba08a21cde55bf01, type: 2}
   hazardDropRate: 1
   hazardVFXWhileWalking: {fileID: 212905597342504826}
+  hazardDropDelay: 0.2
+--- !u!114 &114730677416123702
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1812806897903064}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62f587c17e9b6bf4db7342d71929f765, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazardDamageTaken: 25
 --- !u!114 &114756591030441738
 MonoBehaviour:
   m_ObjectHideFlags: 1
